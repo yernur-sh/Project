@@ -1,20 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth, googleProvider } from '@/lib/firebase';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function LoginPage() {
+  const [displayName, setDisplayName] = useState(''); // Қолданушы аты үшін
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isRegistering, setIsRegistering] = useState(false); // Кіру немесе Тіркелу режимі
+  const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  // Google арқылы кіру
   const handleGoogleSignIn = async () => {
     setIsLoading(true);
     setError(null);
@@ -27,7 +27,6 @@ export default function LoginPage() {
     }
   };
 
-  // Email/Password арқылы кіру немесе тіркелу
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -35,8 +34,14 @@ export default function LoginPage() {
 
     try {
       if (isRegistering) {
-        await createUserWithEmailAndPassword(auth, email, password);
+        // 1. Тіркелу
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        // 2. Профильге қолданушы атын қосу
+        await updateProfile(userCredential.user, {
+          displayName: displayName
+        });
       } else {
+        // Кіру
         await signInWithEmailAndPassword(auth, email, password);
       }
       router.push('/');
@@ -44,6 +49,7 @@ export default function LoginPage() {
       if (error.code === 'auth/user-not-found') setError('Қолданушы табылмады.');
       else if (error.code === 'auth/wrong-password') setError('Құпия сөз қате.');
       else if (error.code === 'auth/email-already-in-use') setError('Бұл Email бос емес.');
+      else if (error.code === 'auth/weak-password') setError('Құпия сөз тым әлсіз (кемінде 6 символ).');
       else setError('Қате шықты. Қайта көріңіз.');
       setIsLoading(false);
     }
@@ -60,8 +66,19 @@ export default function LoginPage() {
           </h1>
         </div>
 
-        {/* Email/Password Формасы */}
         <form onSubmit={handleEmailAuth} className="space-y-4 mb-6">
+          {/* Тек тіркелу кезінде атын сұраймыз */}
+          {isRegistering && (
+            <input 
+              type="text" 
+              placeholder="Толық атыңыз" 
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none transition-all"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+              required={isRegistering}
+            />
+          )}
+          
           <input 
             type="email" 
             placeholder="Email поштаңыз" 
@@ -92,7 +109,6 @@ export default function LoginPage() {
           <div className="relative flex justify-center text-sm"><span className="px-2 bg-white text-gray-400">немесе</span></div>
         </div>
 
-        {/* Google батырмасы */}
         <button 
           onClick={handleGoogleSignIn}
           disabled={isLoading}
