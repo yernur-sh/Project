@@ -11,7 +11,7 @@ const points = [
     address: "Байзақов көшесі, 73/1",
     phone: "+7 (708) 329-84-00",
     hours: "Жабық (Ертең ашылады)",
-    categories: ["Пластик", "Қағаз", "Шыны", "Металл", "Электроника", "Батарейка"],
+    categories: ["Пластик", "Қағаз", "Шыны", "Металл", "Тұрмыстық техника", "Қуаттағыш"],
     lat: 43.258293,
     lng: 76.910428,
     rating: 4.8,
@@ -212,7 +212,7 @@ const points = [
 
 ];
 
-const allCategories = ["Барлығы", "Пластик", "Қағаз", "Шыны", "Металл", "Электроника", "Батарейка"];
+const allCategories = ["Барлығы", "Пластик", "Қағаз", "Шыны", "Металл", "Тұрмыстық техника", "Қуаттағыш"];
 
 const categoryColors: Record<string, string> = {
   "Пластик":     "bg-blue-50 text-blue-700 border border-blue-200",
@@ -220,8 +220,8 @@ const categoryColors: Record<string, string> = {
   "Картон":      "bg-amber-100 text-amber-800 border border-amber-300",
   "Шыны":        "bg-emerald-50 text-emerald-700 border border-emerald-200",
   "Металл":      "bg-slate-100 text-slate-700 border border-slate-200",
-  "Электроника": "bg-indigo-50 text-indigo-700 border border-indigo-200",
-  "Батарейка":   "bg-rose-50 text-rose-700 border border-rose-200",
+  "Тұрмыстық техника": "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  "Қуаттағыш":   "bg-rose-50 text-rose-700 border border-rose-200",
 };
 
 // Жұлдызшалар компоненті
@@ -256,9 +256,6 @@ export default function MapPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -mr-48 -mt-48 animate-pulse" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <span className="inline-block bg-white/20 text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full mb-6 backdrop-blur-sm border border-white/30">
-            Eco-Map Almaty
-          </span>
           <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tighter">
             ҚАБЫЛДАУ НҮКТЕЛЕРІ
           </h1>

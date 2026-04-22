@@ -80,9 +80,7 @@ export default function DIYPage() {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
-            <span className="inline-block bg-teal-500/20 text-teal-300 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-teal-500/30">
-              DIY / Upcycling
-            </span>
+            
             <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight uppercase tracking-tighter">
               Эко-Шеберхана: <br />
               <span className="text-teal-400">Екінші өмір сыйла</span>

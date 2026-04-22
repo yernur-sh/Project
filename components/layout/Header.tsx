@@ -99,7 +99,7 @@ export default function Header() {
                   ) : null}
                   <div className="absolute inset-0 -z-10 bg-green-100 flex items-center justify-center text-xs">👤</div>
                 </div>
-                <span className="text-sm font-medium text-gray-700 hidden sm:block">Профиль</span>
+                <span className="text-sm font-medium text-gray-700 hidden sm:block">Жеке бет</span>
               </Link>
             ) : (
               <Link

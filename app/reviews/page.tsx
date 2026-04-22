@@ -180,9 +180,6 @@ export default function CommunityPage() {
       <section className="bg-gradient-to-br from-emerald-700 via-green-600 to-teal-800 text-white relative py-20 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -mr-48 -mt-48" />
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center animate-in fade-in slide-in-from-bottom duration-1000">
-          <span className="inline-block bg-white/20 text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full mb-6 backdrop-blur-sm border border-white/30">
-            Эко-Лента
-          </span>
           <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight uppercase tracking-tighter">
             Қала дауысы
           </h1>

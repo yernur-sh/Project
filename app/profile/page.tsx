@@ -75,7 +75,7 @@ export default function ProfilePage() {
 
   // Тіркелген күнді пішімдеу
   const joinDate = firebaseUser.metadata.creationTime 
-    ? new Date(firebaseUser.metadata.creationTime).toLocaleDateString('kk-KZ', { month: 'long', year: 'numeric' })
+    ? new Date(firebaseUser.metadata.creationTime).toLocaleDateString('kk-KZ', {})
     : 'Жақында';
 
   return (
