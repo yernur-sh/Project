@@ -13,7 +13,7 @@ const sections = [
   { href: "/map",         icon: "🗺️", title: "Эко-карта",            desc: "Жақын маңдағы контейнерлер мен қабылдау пункттерін табыңыз" },
   { href: "/challenges",  icon: "🏆", title: "Эко-белсенді",          desc: "Қала тазалығына үлес қосып, серіктестерден бонустар алыңыз" },
   { href: "/quiz",        icon: "❓", title: "Эко-сауат",            desc: "Экологиялық біліміңізді тексеріп, сертификат алыңыз" },
-  { href: "/diy",         icon: "🎨", title: "Upcycling",            desc: "Ескі заттарға екінші өмір сыйлау бойынша шеберлік сабақтары" },
+  { href: "/diy",         icon: "🎨", title: "Өңдеу",            desc: "Ескі заттарға екінші өмір сыйлау бойынша шеберлік сабақтары" },
   { href: "/reviews",     icon: "💬", title: "Эко-шағым",            desc: "Заңсыз қоқыс орындары туралы хабарлаңыз" },
 ];
 
@@ -85,7 +85,7 @@ export default function HomePage() {
           <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8">
             <div className="mb-8 flex justify-between items-end">
               <div>
-                <h2 className="text-2xl font-extrabold text-slate-800">Ауа сапасының индексі (AQI)</h2>
+                <h2 className="text-2xl font-extrabold text-slate-800">Ауа сапасының индексі</h2>
                 <p className="text-slate-500 text-sm">Алматы аудандары бойынша нақты уақыт дерегі</p>
               </div>
               <span className="text-[10px] bg-red-100 text-red-600 font-bold px-2 py-1 rounded animate-pulse">LIVE</span>
