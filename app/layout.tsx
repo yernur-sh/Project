@@ -13,8 +13,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "EcoLife KZ — Қызылорда",
-  description: "Қызылорда қаласының экологиялық порталы",
+  title: "Таза Қала",
+  description: "",
 };
 
 export default function RootLayout({
