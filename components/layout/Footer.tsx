@@ -17,7 +17,7 @@ export default function Footer() {
                 ♻️
               </div>
               <span className="font-extrabold text-white text-2xl tracking-tight">
-                EcoLife <span className="text-emerald-500">KZ</span>
+                Таза қала <span className="text-emerald-500"></span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed font-medium max-w-sm">
@@ -77,7 +77,7 @@ export default function Footer() {
         {/* Төменгі құқық қорғау жазуы */}
         <div className="border-t border-slate-800/80 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm font-medium text-slate-500">
-            © 2026 EcoLife KZ. Барлық құқықтар қорғалған.
+            © 2026 Таза қала. Барлық құқықтар қорғалған.
           </p>
           {/* Қосымша визуалды теңгерім үшін шағын декорация */}
           <div className="flex items-center gap-1.5">

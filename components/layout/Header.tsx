@@ -42,7 +42,7 @@ export default function Header() {
               className="object-contain"
             />
             <span className="font-bold text-[#107c41] text-xl tracking-tight">
-              Таза қала <span className="text-green-500">KZ</span>
+              Таза қала <span className="text-green-500"></span>
             </span>
           </Link>
 
